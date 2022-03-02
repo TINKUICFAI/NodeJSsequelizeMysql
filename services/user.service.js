@@ -52,7 +52,13 @@ async function create(params) {
     console.log("result",result.id);
 
   //save Address
-  await db.Address.create({UserId:result.id, ...params.Address});
+  // await db.Address.create({UserId:result.id, ...params.Address})
+
+  await ({UserId:result.id, ...params.Address.forEach(element => {
+    console.log("Elemejfh",element);
+   db.Address.create({UserId:result.id,...element})
+    
+  })})
 }
 
 async function update(id, params) {
