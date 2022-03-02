@@ -51,6 +51,7 @@ function update(req, res, next) {
 }
 
 function _delete(req, res, next) {
+  console.log("req id::::::::::",req.params.id);
   userService
     .delete(req.params.id)
     .then(() => res.json({ message: "User deleted successfully" }))
