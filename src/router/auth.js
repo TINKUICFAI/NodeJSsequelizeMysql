@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Joi = require("joi");
 const validateRequest = require("_middleware/validate-request");
-const userService = require("../services/user.service");
+const userService = require("../controller/user.service.js");
 
 // routes
 router.post("/login", authenticateSchema, authenticate);

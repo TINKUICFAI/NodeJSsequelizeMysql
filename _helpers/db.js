@@ -16,8 +16,8 @@ async function initialize() {
     const sequelize = new Sequelize(database, user, password, { dialect: 'mysql' });
 
     // init models and add them to the exported db object
-        db.User = require('../Models/user.model.js')(sequelize);
-        db.Address = require('../Models/address.model.js')(sequelize);
+        db.User = require('../src/models/user.model.js')(sequelize);
+        db.Address = require('../src/models/address.model.js')(sequelize);
 
     db.User.hasMany(db.Address);
 
