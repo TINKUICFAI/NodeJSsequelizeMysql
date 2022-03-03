@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // api routes
-app.use("/users", require("./src/router/users.controller.js"));
+app.use("/users", require("./src/router/users.js"));
 
 //api routes for login and register
 app.use("/auth", require("./src/router/auth.js"));
